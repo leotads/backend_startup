@@ -1,14 +1,14 @@
-const express = require('express');
-const app = express();
+require('module-alias/register');
+require('dotenv').config();
 
-app.use('/', (req, res) => {
-  res.send('Hello World');
-});
+const config = require('@config');
 
-app.listen(3000, (err) => {
+const app = require('@app');
+
+app.listen(config.app.port, (err) => {
   if (err) {
     return console.log(err);
   }
 
-  console.log(`iniciou em: http://localhost:3000`);
+  console.log(`iniciou em: http://localhost:${config.app.port}`);
 });

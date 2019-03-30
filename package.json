@@ -2,8 +2,9 @@
   "name": "backend_startup",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,10 +17,19 @@
     "url": "https://github.com/leotads/backend_startup/issues"
   },
   "homepage": "https://github.com/leotads/backend_startup#readme",
+  "_moduleAliases": {
+    "@": "src",
+    "@app": "src/app.js",
+    "@config" : "src/config",
+    "@controllers" : "src/controllers"
+  },
   "devDependencies": {
-    "eslint": "^5.16.0"
+    "eslint": "^5.16.0",
+    "nodemon": "^1.18.10"
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "module-alias": "^2.2.0"
   }
 }
